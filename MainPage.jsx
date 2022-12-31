@@ -1,6 +1,8 @@
 import { View, Text, Button } from 'react-native';
 import { useState } from 'react';
 import { Card, List, Paragraph, Title } from 'react-native-paper';
+import { Swipeable } from 'react-native-gesture-handler';
+import { TapGestureHandler, RotationGestureHandler, Swipeable } from 'react-native-gesture-handler';
 
 export default function MainPage() {
     const [selectedComponent, setSelectedComponent] = useState("");
@@ -60,6 +62,14 @@ export default function MainPage() {
         return Math.floor(Math.random() * intVal);
     };
 
+    const leftActions = () => {
+        return (
+            <View>
+                <Text>Stuff</Text>
+            </View>
+        );
+    };
+
     return (
         <View>
             <List.Section title="Quote Options">
@@ -100,6 +110,11 @@ export default function MainPage() {
                     }}
                 />
             }
+            <Swipeable
+                renderLeftActions={leftActions}
+            >
+                <Text>Other thing man</Text>
+            </Swipeable>
         </View>
     );
 }
