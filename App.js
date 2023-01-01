@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { Text, View, StyleSheet, FlatList, Button } from 'react-native';
+import { Text, View, StyleSheet, FlatList, Button, ImageBackground } from 'react-native';
 
 import Constants from 'expo-constants';
 import { GestureHandlerRootView, Swipeable } from 'react-native-gesture-handler';
@@ -56,6 +56,7 @@ export default function App() {
   const [author, setAuthor] = useState("");
   const [quote, setQuote] = useState("");
   const [_index, setIndex] = useState(0);
+  const [backgroundImage, setBackgroundImage] = useState(require('./the-office.jpg'));
 
   const getRandomInt = (intVal) => {
     return Math.floor(Math.random() * intVal);
@@ -82,7 +83,12 @@ export default function App() {
             justifyContent: 'center',
             width: 70,
           }}>
-          <Button color="red" onPress={onClick} title="SWITCH"></Button>
+          <Button
+            color="red"
+            onPress={onClick}
+            title="SWITCH"
+          >
+          </Button>
         </View>
       );
     };
@@ -98,12 +104,14 @@ export default function App() {
           rightOpenValue={-100}>
           <View
             style={{
-              borderColor: 'grey',
-              borderWidth: 1,
+              borderColor: 'aliceblue',
+              borderWidth: 10,
               padding: 30,
               marginVertical: 18,
               marginHorizontal: 30,
-              backgroundColor: 'white',
+              backgroundColor: 'azure',
+              borderRadius: 2,
+              elevation: 2
             }}
           >
             <Text
@@ -113,7 +121,7 @@ export default function App() {
                 setQuote(listData[_index]?.quote);
                 setSelectedComponent({ author: author, quote: quote });
               }}
-              style={{ fontSize: 32 }}
+              style={{ fontSize: 32, fontFamily: 'monospace' }}
             >
               {category}
             </Text>
@@ -131,39 +139,45 @@ export default function App() {
     else if (JSON.stringify(listData) === JSON.stringify(devQuotes)) {
       setListData(parksAndRecQuotes);
       setCategory("Parks and Rec.");
+      setBackgroundImage(require('./parks-and-rec.jpg'));
     }
     else if (JSON.stringify(listData) === JSON.stringify(parksAndRecQuotes)) {
       setListData(newGirlQuotes);
       setCategory("New Girl");
+      setBackgroundImage(require('./new-girl.jpeg'));
     }
     else if (JSON.stringify(listData) === JSON.stringify(newGirlQuotes)) {
       setListData(officeQuotes);
       setCategory("The Office");
+      setBackgroundImage(require('./the-office.jpg'));
     }
   };
 
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={[selectedComponent]}
-        renderItem={(v) =>
-          renderItem(v, () => {
-            console.log('Pressed', v);
-            switchList();
-          })
-        }
-        keyExtractor={(item) => item.id}
-      >
-      </FlatList>
-      <Card
-        elevation={2}
-      >
-        <Card.Content>
-          <Title> {author} </Title>
-          <Paragraph> {quote} </Paragraph>
-        </Card.Content>
-      </Card>
-    </View>
+    <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
+      <View style={styles.container}>
+        <FlatList
+          data={[selectedComponent]}
+          renderItem={(v) =>
+            renderItem(v, () => {
+              console.log('Pressed', v);
+              switchList();
+            })
+          }
+          keyExtractor={(item) => item.id}
+        >
+        </FlatList>
+        <Card
+          elevation={2}
+        >
+          <Card.Content>
+            <Title style={{ fontFamily: 'monospace' }}> {author} </Title>
+            <Paragraph style={{ fontFamily: 'monospace' }}> {quote} </Paragraph>
+          </Card.Content>
+        </Card>
+      </View>
+    </ImageBackground>
+
   );
 }
 
@@ -172,7 +186,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#ecf0f1',
     padding: 8
-  }
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: "stretch",
+    width: "100%",
+    alignItems: "center",
+  },
 });
