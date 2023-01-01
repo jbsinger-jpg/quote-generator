@@ -47,7 +47,8 @@ const devQuotes = [
     { id: 27, author: "Jacob", quote: "If you polish a turd all you still have a turd." },
     { id: 28, author: "Jacob", quote: "The best time to cut a tree was yesterday." },
     { id: 29, author: "Jacob", quote: "The definition of insanity is to do the same thing, but expect different results, so I must be crazy for coding." },
-    { id: 30, author: "Jacob", quote: "I only cry in the shower, for recycling purposes." }
+    { id: 30, author: "Jacob", quote: "I only cry in the shower, for recycling purposes." },
+    { id: 55, author: "Jacob", quote: "I don't do smoke cigarettes or drink alcohol, but I do have an unhealthy obsession with cookie dough ice-cream." }
 ];
 
 const adventureTimeQuotes = [
@@ -72,4 +73,15 @@ const spongebobQuotes = [
     { id: 45, author: "Patrick", quote: "Dumb people are always blissfully unaware of how dumb they really are…" },
 ];
 
-export { officeQuotes, newGirlQuotes, parksAndRecQuotes, devQuotes, adventureTimeQuotes, spongebobQuotes };
+const friendsQuotes = [
+    { id: 56, author: "Chandler", quote: "I can handle this. Handle is my middle name. Actually, handle is the middle of my first name." },
+    { id: 57, author: "Chandler", quote: "All right, look if you absolutely have to tell her the truth, at least wait until the timing’s right. And that’s what deathbeds are for." },
+    { id: 58, author: "Ross", quote: "If you’re going to call me names, I would prefer Ross, the Divorce Force. It’s just cooler." },
+    { id: 59, author: "Joey", quote: "It’s a moo point. It’s like a cow’s opinion; it doesn’t matter. It’s moo." },
+    { id: 60, author: "Chandler", quote: "I’m not so good with the advice. Can I interest you in a sarcastic comment?" },
+    { id: 61, author: "Phoebe", quote: "Come on Ross you’re a palaeontologist – dig a little deeper." },
+    { id: 62, author: "Joey", quote: "How you doin'?" },
+    { id: 63, author: "Janice", quote: "I'm a young woman, I have needs." },
+];
+
+export { officeQuotes, newGirlQuotes, parksAndRecQuotes, devQuotes, adventureTimeQuotes, spongebobQuotes, friendsQuotes };
