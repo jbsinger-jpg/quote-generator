@@ -57,6 +57,21 @@ const adventureTimeQuotes = [
     { id: 33, author: "Ice King", quote: "I've soiled my tunic, completely by choice!" },
     { id: 34, author: "Ice King", quote: "I'm toying with you... psychologically!" },
     { id: 35, author: "Lemongrab", quote: "It has cost me much, but I have learned lemon need not squeeze lemon to survive!" },
+    { id: 64, author: "Jake", quote: "You're getting hung up on imaginary problems. You gotta focus on what's real." },
+    { id: 65, author: "Finn", quote: "I say creepy is just another label we used to distance ourselves from stuff we don't understand, or that it reminds us of something in ourselves that we're not comfortable with." },
+    { id: 66, author: "Lumpy Space Princess", quote: "I'm really sorry Finn. I can't help you because my parents are horrible idiots." },
+    { id: 67, author: "Duke of Nuts", quote: "People make mistakees. It's all a part of growing up, an you never really stop growing." },
+    { id: 68, author: "Ice King", quote: "Sometimes, you don't cry because you're afraid of real emotion." },
+    { id: 69, author: "Demon Cat", quote: "I have approximate knowledge of many things." },
+    { id: 70, author: "Finn", quote: "Everything small is just a smaller version of something big." },
+    { id: 71, author: "BMO", quote: "When bad things happen, I know you want to believe they are a joke, but sometimes life is scary and dark. That is why we must find the light." },
+    { id: 72, author: "Finn", quote: "Let’s always be stupid, forever!" },
+    { id: 73, author: "Finn", quote: "Don’t you call sweatpants: “give up on life pants” Jake?" },
+    { id: 74, author: "Princess Bubblegum", quote: "People get built different. We don’t need to figure it out, we just need to respect it." },
+    { id: 75, author: "Ice King", quote: "We will do nothing but kiss and eat a whole bunch till we get fat and die." },
+    { id: 76, author: "Jake", quote: "Bad biscuits make the baker broke, bro." },
+    { id: 77, author: "Ice King", quote: "I’m collecting them all first to be sure I make the right choice!" },
+
 ];
 
 const spongebobQuotes = [
