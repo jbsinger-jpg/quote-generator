@@ -6,7 +6,7 @@ import { GestureHandlerRootView, Swipeable } from 'react-native-gesture-handler'
 import Constants from 'expo-constants';
 
 // Relative Imports
-import { officeQuotes, newGirlQuotes, parksAndRecQuotes, devQuotes } from "./quoteTypes";
+import { officeQuotes, newGirlQuotes, parksAndRecQuotes, devQuotes, adventureTimeQuotes, spongebobQuotes, friendsQuotes } from "./quoteTypes";
 
 // Styling Imports
 // None
@@ -110,6 +110,21 @@ export default function App() {
       setBackgroundImage(require('./new-girl.jpeg'));
     }
     else if (JSON.stringify(listData) === JSON.stringify(newGirlQuotes)) {
+      setListData(adventureTimeQuotes);
+      setCategory("Adventure Time");
+      setBackgroundImage(require('./adventure-time.jpg'));
+    }
+    else if (JSON.stringify(listData) === JSON.stringify(adventureTimeQuotes)) {
+      setListData(spongebobQuotes);
+      setCategory("Spongebob");
+      setBackgroundImage(require('./spongebob.jpeg'));
+    }
+    else if (JSON.stringify(listData) === JSON.stringify(spongebobQuotes)) {
+      setListData(friendsQuotes);
+      setCategory("Friends");
+      setBackgroundImage(require('./Friends.jpg'));
+    }
+    else {
       setListData(officeQuotes);
       setCategory("The Office");
       setBackgroundImage(require('./the-office.jpg'));
