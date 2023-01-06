@@ -97,36 +97,37 @@ export default function App() {
   const switchList = () => {
     if (JSON.stringify(listData) === JSON.stringify(officeQuotes)) {
       setListData(devQuotes);
-      setCategory("The Devs");
+      setCategory("Press Me! The Devs");
+      setBackgroundImage(require("./devbackground.png"));
     }
     else if (JSON.stringify(listData) === JSON.stringify(devQuotes)) {
       setListData(parksAndRecQuotes);
-      setCategory("Parks and Rec.");
+      setCategory("Press Me! Parks and Rec.");
       setBackgroundImage(require('./parks-and-rec.jpg'));
     }
     else if (JSON.stringify(listData) === JSON.stringify(parksAndRecQuotes)) {
       setListData(newGirlQuotes);
-      setCategory("New Girl");
+      setCategory("Press Me! New Girl");
       setBackgroundImage(require('./new-girl.jpeg'));
     }
     else if (JSON.stringify(listData) === JSON.stringify(newGirlQuotes)) {
       setListData(adventureTimeQuotes);
-      setCategory("Adventure Time");
+      setCategory("Press Me! Adventure Time");
       setBackgroundImage(require('./adventure-time.jpg'));
     }
     else if (JSON.stringify(listData) === JSON.stringify(adventureTimeQuotes)) {
       setListData(spongebobQuotes);
-      setCategory("Spongebob");
+      setCategory("Press Me! Spongebob");
       setBackgroundImage(require('./spongebob.jpeg'));
     }
     else if (JSON.stringify(listData) === JSON.stringify(spongebobQuotes)) {
       setListData(friendsQuotes);
-      setCategory("Friends");
+      setCategory("Press Me! Friends");
       setBackgroundImage(require('./Friends.jpg'));
     }
     else {
       setListData(officeQuotes);
-      setCategory("The Office");
+      setCategory("Press Me! The Office");
       setBackgroundImage(require('./the-office.jpg'));
     }
   };
@@ -143,6 +144,7 @@ export default function App() {
               switchList();
             })
           }
+          key={1}
           keyExtractor={(item) => item.id}
         />
         <Card
