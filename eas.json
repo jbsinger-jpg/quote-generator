@@ -1,14 +1,16 @@
 {
   "cli": {
-    "version": ">= 3.1.1"
+    "appVersionSource": "local"
   },
   "build": {
-    "preview": {
-      "developmentClient": true,
+    "staging": {
+      "distribution": "internal",
       "android": {
-        "gradleCommand": ":app:assembleRelease"
+        "buildType": "apk"
       }
     },
-    "production": {}
+    "production": {
+      "autoIncrement": true
+    }
   }
 }
